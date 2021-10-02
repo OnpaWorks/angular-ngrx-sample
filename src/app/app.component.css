@@ -1,0 +1,11 @@
+nav a {
+  padding: 5px 15px;
+  background: lightskyblue;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 2px;
+  transition: opacity 0.2s;
+}
+nav a:hover {
+  opacity: 0.5;
+}

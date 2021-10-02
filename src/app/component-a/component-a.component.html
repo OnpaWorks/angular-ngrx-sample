@@ -1,0 +1,36 @@
+<div>
+  <h5>Component A have Simple Get Add Remove Function</h5>
+</div>
+
+<form #form="ngForm" [formGroup]="formGroup" (ngSubmit)="onAdd()">
+  <mat-form-field appearance="outline">
+    <mat-label>Item Name</mat-label>
+    <input matInput placeholder="Item Name" formControlName="name">
+    <mat-error *ngIf="formGroup.controls.name.hasError('required')">
+      Item Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    mat-raised-button color="primary"
+    [disabled]="formGroup.invalid || formGroup.pristine"
+    class="form-button"
+    >Add</button>
+</form>
+
+<div class="list-parent">
+  <ng-container *ngIf="list$|async as list; else noItem">
+    <div *ngFor="let item of list" class="list-child" (mouseenter)="active = item.id" (mouseleave)="active = null">
+      <div class="child-id">{{item.id}}</div>
+      <div class="child-name" [matTooltip]="item.name">{{item.name}}</div>
+      <div class="child-delete" [class.active]="active == item.id">
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="onDelete(item)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noItem>
+    No Item
+  </ng-template>
+</div>
