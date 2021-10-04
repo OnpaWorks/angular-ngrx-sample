@@ -6,13 +6,10 @@
     "npm": "7.x"
   },
   "scripts": {
-    "ng": "ng",
+    "postinstall": "npm run build",
+    "build": "ng build --prod",
     "start": "node server",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "dev": "ng serve"
   },
   "private": true,
   "dependencies": {
