@@ -2,7 +2,8 @@
   "name": "ngrx-sample",
   "version": "0.0.0",
   "engines": {
-    "node": "14.x"
+    "node": "14.x",
+    "npm": "7.x"
   },
   "scripts": {
     "ng": "ng",
