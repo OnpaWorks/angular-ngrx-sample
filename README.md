@@ -2,6 +2,10 @@
 
 NgRx (Multi Stores) Sample.
 
+## Demo
+
+https://angular-ngrx-sample.herokuapp.com/
+
 ## Library used
 
 [Angular](https://angular.io/)  version 11.2.0
